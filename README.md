@@ -85,6 +85,7 @@ $ ps
 
 
 ## C Program to create new process using Linux API system calls fork() and exit()
+```c
 #include <stdio.h>
 #include<stdlib.h>
 int main()
@@ -99,7 +100,7 @@ printf("I am parent, my pid is %d\n",getpid());
 sleep(100); 
 exit(0);} 
 }
-
+```
 
 ##OUTPUT:
 
@@ -113,6 +114,30 @@ exit(0);}
 
 
 ## C Program to execute Linux system commands using Linux API system calls exec() family
+```c
+#include <stdlib.h>
+#include <sys/wait.h>
+#include <sys/types.h>
+int main()
+{       int status;
+        printf("Running ps with execlp\n");
+        execl("ps", "ps", "ax", NULL);
+        wait(&status);
+        if (WIFEXITED(status))
+                printf("child exited with status of %d\n", WEXITSTATUS(status));
+        else
+                puts("child did not exit successfully\n");
+        printf("Done.\n");
+printf("Running ps with execlp. Now with path specified\n");
+        execl("/bin/ps", "ps", "ax", NULL);
+        wait(&status);
+        if (WIFEXITED(status))
+                printf("child exited with status of %d\n", WEXITSTATUS(status));
+        else
+                puts("child did not exit successfully\n");
+        printf("Done.\n");
+        exit(0);}
+```
 
 
 
@@ -139,7 +164,9 @@ exit(0);}
 
 
 
-##OUTPUT
+##OUTPUT:
+![Screenshot 2024-09-11 210236](https://github.com/user-attachments/assets/d72c442c-c284-48fe-ad3f-d191250343d2)
+
 
 
 
