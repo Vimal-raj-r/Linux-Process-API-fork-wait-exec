@@ -60,14 +60,11 @@ int main(void)
 
 
 ##OUTPUT:
+```c
 $ ./pidcheck.o 
 The process id: 2382
 The process id of parent function: 2258
-
-$ ps 
-  PID TTY          TIME CMD
- 2258 pts/0    00:00:00 bash
- 2392 pts/0    00:00:00 ps
+```
 ![Screenshot 2024-09-11 112810](https://github.com/user-attachments/assets/7b212865-37d9-4b36-aaf4-d5d045aa6f38)
 
 
@@ -84,7 +81,9 @@ $ ps
 
 
 
-## C Program to create new process using Linux API system calls fork() and exit()
+## C Program to create new process using Linux API system calls fork() and exit():
+
+# PROGRAM:
 ```c
 #include <stdio.h>
 #include<stdlib.h>
@@ -104,6 +103,8 @@ exit(0);}
 
 ##OUTPUT:
 
+
+
 ![Screenshot 2024-09-11 114554](https://github.com/user-attachments/assets/1bf7a385-202f-49af-99cc-44ddd59d6b43)
 
 
@@ -113,7 +114,9 @@ exit(0);}
 
 
 
-## C Program to execute Linux system commands using Linux API system calls exec() family
+## C Program to execute Linux system commands using Linux API system calls exec() family:
+
+# PROGRAM:
 ```c
 #include <stdlib.h>
 #include <sys/wait.h>
@@ -165,6 +168,8 @@ printf("Running ps with execlp. Now with path specified\n");
 
 
 ##OUTPUT:
+
+
 ![Screenshot 2024-09-11 210236](https://github.com/user-attachments/assets/d72c442c-c284-48fe-ad3f-d191250343d2)
 
 
